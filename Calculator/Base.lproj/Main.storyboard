@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +13,240 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fMu-eC-pWc">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGE-e6-lHN">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="136.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aR3-Ak-Y3d">
+                                        <rect key="frame" x="0.0" y="136.5" width="414" height="136"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pz-ac-7Ms">
+                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="136"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="C"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w5W-HM-Q2M"/>
+                                                    <action selector="tapClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kvD-aG-yxZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mih-dR-ZJJ">
+                                                <rect key="frame" x="103.5" y="0.0" width="103.5" height="136"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="+/-"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="27P-bG-xHm"/>
+                                                    <action selector="tapSymbol:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bhT-UV-8cl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VI2-aG-fh3">
+                                                <rect key="frame" x="207" y="0.0" width="103.5" height="136"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="%"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Njf-fl-zL5"/>
+                                                    <action selector="tapSymbol:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JKw-Zn-GSd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8eN-VD-tq6">
+                                                <rect key="frame" x="310.5" y="0.0" width="103.5" height="136"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="DEL"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1MC-lJ-Rwp"/>
+                                                    <action selector="tapDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mhH-aB-61G"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7N4-VM-dyR">
+                                        <rect key="frame" x="0.0" y="272.5" width="414" height="136.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oog-r7-OWj">
+                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="136.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="7"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KUr-Rq-1yl"/>
+                                                    <action selector="tapDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="peu-Fg-8qt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="086-q0-dpH">
+                                                <rect key="frame" x="103.5" y="0.0" width="103.5" height="136.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="8"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cqv-Zl-8C5"/>
+                                                    <action selector="tapDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fGS-MZ-kbw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9I-Ba-irH">
+                                                <rect key="frame" x="207" y="0.0" width="103.5" height="136.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="9"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P3D-QP-teB"/>
+                                                    <action selector="tapDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rgx-JX-mTd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6N-z8-T1f">
+                                                <rect key="frame" x="310.5" y="0.0" width="103.5" height="136.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="÷"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N7h-pO-k1J"/>
+                                                    <action selector="tapSymbol:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ud4-x0-3wQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ggS-hx-8mA">
+                                        <rect key="frame" x="0.0" y="409" width="414" height="136.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lc3-x2-adu">
+                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="136.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="4"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8zN-Zp-TAN"/>
+                                                    <action selector="tapDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zgd-XX-NI0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BlN-g9-MSZ">
+                                                <rect key="frame" x="103.5" y="0.0" width="103.5" height="136.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="5"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="60h-mT-PAW"/>
+                                                    <action selector="tapDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Er-PI-jt6"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iW7-Oa-38B">
+                                                <rect key="frame" x="207" y="0.0" width="103.5" height="136.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="6"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YQC-Xa-3Uo"/>
+                                                    <action selector="tapDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TSk-V2-UyS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTN-PL-CnC">
+                                                <rect key="frame" x="310.5" y="0.0" width="103.5" height="136.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="×"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dck-DM-3FR"/>
+                                                    <action selector="tapSymbol:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gGl-kB-xPJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HRB-xQ-7C6">
+                                        <rect key="frame" x="0.0" y="545.5" width="414" height="136"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S76-eu-oT8">
+                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="136"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="1"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ajf-fe-v1G"/>
+                                                    <action selector="tapDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Omf-zO-Cer"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVS-1s-xFs">
+                                                <rect key="frame" x="103.5" y="0.0" width="103.5" height="136"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="2"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iF0-ug-AXH"/>
+                                                    <action selector="tapDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mJL-eN-tGu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wx7-SZ-QAb">
+                                                <rect key="frame" x="207" y="0.0" width="103.5" height="136"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="3"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pcL-6Q-ZsT"/>
+                                                    <action selector="tapDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gqD-Yd-KYf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WP1-w6-mRS">
+                                                <rect key="frame" x="310.5" y="0.0" width="103.5" height="136"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="-"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ncM-4G-eIw"/>
+                                                    <action selector="tapSymbol:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fut-D3-a4C"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gFs-y5-zj5">
+                                        <rect key="frame" x="0.0" y="681.5" width="414" height="136.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9x-Ky-4gc">
+                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="136.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="0"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aTr-Yl-OTS"/>
+                                                    <action selector="tapDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ov4-Hl-g92"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0C-kW-7G5">
+                                                <rect key="frame" x="103.5" y="0.0" width="103.5" height="136.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="."/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yyI-T6-lej"/>
+                                                    <action selector="tapDot:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xAF-Mz-kuz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pxq-IL-QvR">
+                                                <rect key="frame" x="207" y="0.0" width="103.5" height="136.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="="/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uq7-0m-DQ1"/>
+                                                    <action selector="tapEqual:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3OU-Jp-Mef"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lw-sL-ZST">
+                                                <rect key="frame" x="310.5" y="0.0" width="103.5" height="136.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <state key="normal" title="+"/>
+                                                <connections>
+                                                    <action selector="tapAny:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YOt-f6-fAD"/>
+                                                    <action selector="tapSymbol:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mkX-rJ-GnG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fMu-eC-pWc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="6Dn-6P-35J"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fMu-eC-pWc" secondAttribute="trailing" id="GFh-Y5-m7s"/>
+                            <constraint firstItem="fMu-eC-pWc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P8b-sz-djm"/>
+                            <constraint firstItem="fMu-eC-pWc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yDb-DA-q25"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="inputLabel" destination="OGE-e6-lHN" id="ZQu-Y9-h1t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
